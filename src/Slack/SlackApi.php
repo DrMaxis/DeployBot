@@ -38,9 +38,16 @@ use RuntimeException;
  * `error: missing_scope` — this class turns both into a `RuntimeException`
  * so callers don't have to parse the JSON envelope themselves.
  *
+ * ## Why not `final`
+ *
+ * Omitted deliberately so host-app tests can produce a Mockery spy
+ * that records calls without hitting the real Slack API. The class is
+ * still intended to be used as-is in production — subclassing it in
+ * production code is a smell.
+ *
  * @see https://api.slack.com/methods
  */
-final class SlackApi
+class SlackApi
 {
     private ClientInterface $http;
 

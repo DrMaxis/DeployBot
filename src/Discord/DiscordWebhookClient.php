@@ -33,9 +33,15 @@ use RuntimeException;
  * is supposed to fire but doesn't, we want the exception in Sentry, not
  * radio silence.
  *
+ * ## Why not `final`
+ *
+ * Omitted deliberately so host-app tests can spy the `post()` method
+ * via Mockery. Subclassing in production is not the intent — the
+ * configured instance from the service provider is the one you want.
+ *
  * @see https://discord.com/developers/docs/resources/webhook#execute-webhook
  */
-final class DiscordWebhookClient
+class DiscordWebhookClient
 {
     private ClientInterface $http;
 
