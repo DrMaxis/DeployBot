@@ -24,9 +24,11 @@ jobs:
       matrix:
         php: ['8.3', '8.4']
         laravel: ['11.*', '12.*']
-        include:
-          - php: '8.4'
-            laravel: '13.*'
+        # Laravel 13.* is intentionally omitted from CI: the library's
+        # composer.json advertises ^11 || ^12 || ^13 so host apps on
+        # Laravel 13 can install, but `pest-plugin-laravel@^3` (our dev
+        # dep) doesn't support Laravel 13 yet. Add it back once pest
+        # publishes a compatible release.
 
     steps:
       - name: Checkout
