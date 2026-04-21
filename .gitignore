@@ -1,0 +1,13 @@
+/vendor/
+/.phpunit.cache/
+/.phpstan.cache/
+.phpunit.result.cache
+composer.lock
+composer.phar
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
