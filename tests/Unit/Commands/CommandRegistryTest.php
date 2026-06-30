@@ -98,3 +98,33 @@ it('rejects registering a class that does not implement CommandInterface', funct
     expect(fn () => $registry->register(NotACommand::class))
         ->toThrow(InvalidArgumentException::class, 'must implement');
 });
+
+it('registerDefault adds a command when the name is free', function (): void {
+    $registry = new CommandRegistry;
+    $registry->registerDefault(FakeAlphaCommand::class);
+
+    expect($registry->get('alpha'))->toBe(FakeAlphaCommand::class);
+});
+
+it('registerDefault is a no-op when the name is already taken', function (): void {
+    $registry = new CommandRegistry;
+    $registry->register(FakeAlphaCommand::class);
+    $registry->registerDefault(FakeAlphaReplacementCommand::class);
+
+    expect($registry->get('alpha'))->toBe(FakeAlphaCommand::class);
+});
+
+it('registerDefault still validates the class implements CommandInterface', function (): void {
+    $registry = new CommandRegistry;
+
+    expect(fn () => $registry->registerDefault(NotACommand::class))
+        ->toThrow(InvalidArgumentException::class, 'must implement');
+});
+
+it('a host override followed by a library registerDefault keeps the host registration', function (): void {
+    $registry = new CommandRegistry;
+    $registry->override(FakeAlphaReplacementCommand::class);
+    $registry->registerDefault(FakeAlphaCommand::class);
+
+    expect($registry->get('alpha'))->toBe(FakeAlphaReplacementCommand::class);
+});

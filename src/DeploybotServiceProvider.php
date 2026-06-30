@@ -56,7 +56,7 @@ class DeploybotServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        $this->app->make(CommandRegistry::class)->register(HelpCommand::class);
+        $this->app->make(CommandRegistry::class)->registerDefault(HelpCommand::class);
 
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
