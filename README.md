@@ -70,7 +70,7 @@ Point your Slack app's slash command at `https://your-app.example/deploybot/slac
 - Discord webhook client (multi-purpose routing)
 - Channel-subscription model for broadcasting events
 - Block Kit response envelope types
-- Auto-discovered service provider · Laravel 11 / 12 / 13
+- Auto-discovered service provider · Laravel 12 / 13
 
 ## Contributing
 
