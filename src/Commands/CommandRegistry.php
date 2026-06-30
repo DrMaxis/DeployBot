@@ -31,6 +31,19 @@ class CommandRegistry
         $this->commands[$this->extractName($class)] = $class;
     }
 
+    
+    public function registerDefault(string $class): void
+    {
+        $this->assertIsCommand($class);
+        $name = $this->extractName($class);
+
+        if (isset($this->commands[$name])) {
+            return;
+        }
+
+        $this->commands[$name] = $class;
+    }
+
     public function get(string $name): ?string
     {
         return $this->commands[strtolower($name)] ?? null;
