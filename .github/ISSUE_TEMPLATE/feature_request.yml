@@ -1,0 +1,40 @@
+name: Feature request
+description: Propose a new capability for DeployBot.
+title: "[Feature]: "
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for proposing a feature. Describe the use case first, the proposed API second.
+
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Use case
+      description: What problem are you trying to solve? Who would benefit? Why isn't the current API enough?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_api
+    attributes:
+      label: Proposed API
+      description: Sketch the API you'd want to use. Code samples encouraged.
+      render: php
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: What other approaches did you think about? Why didn't they work?
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I've searched existing issues and this isn't already proposed.
+          required: true
+        - label: This is in scope for a Slack + Discord bot framework (not a generic Laravel utility).
+          required: true

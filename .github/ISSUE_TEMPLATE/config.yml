@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question / How-to
+    url: https://github.com/DrMaxis/DeployBot/discussions
+    about: Please use GitHub Discussions for questions and how-to topics.
+  - name: Security vulnerability
+    url: https://github.com/DrMaxis/DeployBot/security/advisories/new
+    about: Report security issues privately via GitHub's vulnerability reporting (not the public issue tracker).

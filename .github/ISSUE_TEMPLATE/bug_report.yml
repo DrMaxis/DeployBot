@@ -1,0 +1,70 @@
+name: Bug report
+description: Report a defect in DeployBot.
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Please fill out the form so we can reproduce + fix it efficiently.
+
+  - type: input
+    id: deploybot_version
+    attributes:
+      label: DeployBot version
+      description: From `composer show drmaxis/deploybot`.
+      placeholder: "0.1.0"
+    validations:
+      required: true
+
+  - type: input
+    id: php_version
+    attributes:
+      label: PHP version
+      description: From `php -v`.
+      placeholder: "8.3.10"
+    validations:
+      required: true
+
+  - type: input
+    id: laravel_version
+    attributes:
+      label: Laravel version
+      description: From `php artisan --version`.
+      placeholder: "11.30.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What did you expect to happen? What actually happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: The smallest amount of code + config that triggers the bug. Without this, the issue may be closed as not-reproducible.
+      render: php
+    validations:
+      required: true
+
+  - type: textarea
+    id: stack_trace
+    attributes:
+      label: Stack trace (if applicable)
+      description: Paste the exception + stack trace inside the code block below.
+      render: shell
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I've searched existing issues and this isn't a duplicate.
+          required: true
+        - label: I've verified this isn't a configuration issue in my host application.
+          required: true

@@ -1,0 +1,121 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Method DrMaxis\\Deploybot\\Commands\\CommandContext\:\:__construct\(\) has parameter \$args with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Commands/CommandContext.php
+
+		-
+			message: '#^Method DrMaxis\\Deploybot\\Commands\\CommandContext\:\:__construct\(\) has parameter \$raw with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Commands/CommandContext.php
+
+		-
+			message: '#^Method DrMaxis\\Deploybot\\Commands\\CommandContext\:\:raw\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Commands/CommandContext.php
+
+		-
+			message: '#^Method DrMaxis\\Deploybot\\Commands\\CommandContext\:\:withArgs\(\) has parameter \$args with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Commands/CommandContext.php
+
+		-
+			message: '#^Method DrMaxis\\Deploybot\\Commands\\CommandDispatcher\:\:__construct\(\) has parameter \$adminUserIds with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Commands/CommandDispatcher.php
+
+		-
+			message: '#^Method DrMaxis\\Deploybot\\Commands\\CommandRegistry\:\:all\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Commands/CommandRegistry.php
+
+		-
+			message: '#^Property DrMaxis\\Deploybot\\Commands\\CommandRegistry\:\:\$commands type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Commands/CommandRegistry.php
+
+		-
+			message: '#^Method DrMaxis\\Deploybot\\Commands\\CommandResponse\:\:__construct\(\) has parameter \$blocks with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Commands/CommandResponse.php
+
+		-
+			message: '#^Method DrMaxis\\Deploybot\\Commands\\CommandResponse\:\:forChannel\(\) has parameter \$blocks with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Commands/CommandResponse.php
+
+		-
+			message: '#^Method DrMaxis\\Deploybot\\Commands\\CommandResponse\:\:forUser\(\) has parameter \$blocks with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Commands/CommandResponse.php
+
+		-
+			message: '#^Method DrMaxis\\Deploybot\\Commands\\CommandResponse\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Commands/CommandResponse.php
+
+		-
+			message: '#^Method DrMaxis\\Deploybot\\Discord\\DiscordWebhookClient\:\:__construct\(\) has parameter \$webhooks with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Discord/DiscordWebhookClient.php
+
+		-
+			message: '#^Method DrMaxis\\Deploybot\\Discord\\DiscordWebhookClient\:\:post\(\) has parameter \$embeds with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Discord/DiscordWebhookClient.php
+
+		-
+			message: '#^Method DrMaxis\\Deploybot\\Slack\\SlackApi\:\:decode\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Slack/SlackApi.php
+
+		-
+			message: '#^Method DrMaxis\\Deploybot\\Slack\\SlackApi\:\:post\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Slack/SlackApi.php
+
+		-
+			message: '#^Method DrMaxis\\Deploybot\\Slack\\SlackApi\:\:post\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Slack/SlackApi.php
+
+		-
+			message: '#^Method DrMaxis\\Deploybot\\Slack\\SlackApi\:\:postEphemeral\(\) has parameter \$blocks with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Slack/SlackApi.php
+
+		-
+			message: '#^Method DrMaxis\\Deploybot\\Slack\\SlackApi\:\:postEphemeral\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Slack/SlackApi.php
+
+		-
+			message: '#^Method DrMaxis\\Deploybot\\Slack\\SlackApi\:\:postMessage\(\) has parameter \$blocks with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Slack/SlackApi.php
+
+		-
+			message: '#^Method DrMaxis\\Deploybot\\Slack\\SlackApi\:\:postMessage\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Slack/SlackApi.php

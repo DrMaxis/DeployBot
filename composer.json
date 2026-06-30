@@ -1,0 +1,72 @@
+{
+    "name": "drmaxis/deploybot",
+    "description": "Reusable Slack + Discord bot for Laravel",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["laravel", "slack", "discord", "webhook", "bot", "deploybot", "slash-commands", "block-kit", "hmac"],
+    "homepage": "https://github.com/DrMaxis/DeployBot",
+    "support": {
+        "issues": "https://github.com/DrMaxis/DeployBot/issues",
+        "source": "https://github.com/DrMaxis/DeployBot"
+    },
+    "authors": [
+        {
+            "name": "DrMaxis",
+            "homepage": "https://github.com/DrMaxis"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^7.9",
+        "illuminate/bus": "^11.0 || ^12.0 || ^13.0",
+        "illuminate/contracts": "^11.0 || ^12.0 || ^13.0",
+        "illuminate/database": "^11.0 || ^12.0 || ^13.0",
+        "illuminate/http": "^11.0 || ^12.0 || ^13.0",
+        "illuminate/routing": "^11.0 || ^12.0 || ^13.0",
+        "illuminate/support": "^11.0 || ^12.0 || ^13.0"
+    },
+    "require-dev": {
+        "driftingly/rector-laravel": "^2.0",
+        "larastan/larastan": "^3.0",
+        "laravel/pint": "^1.18",
+        "orchestra/testbench": "^9.0 || ^10.0",
+        "pestphp/pest": "^3.0",
+        "pestphp/pest-plugin-laravel": "^3.0",
+        "rector/rector": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DrMaxis\\Deploybot\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DrMaxis\\Deploybot\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        },
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DrMaxis\\Deploybot\\DeploybotServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "pest",
+        "analyze": "phpstan analyze",
+        "format": "pint",
+        "check": "pint --test",
+        "rector": "rector process",
+        "rector:dry": "rector process --dry-run"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
