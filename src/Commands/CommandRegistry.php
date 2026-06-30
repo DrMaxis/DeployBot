@@ -31,7 +31,6 @@ class CommandRegistry
         $this->commands[$this->extractName($class)] = $class;
     }
 
-    
     public function registerDefault(string $class): void
     {
         $this->assertIsCommand($class);
