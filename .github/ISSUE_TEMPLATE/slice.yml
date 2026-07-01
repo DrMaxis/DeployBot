@@ -1,0 +1,147 @@
+name: Slice
+description: A slice from beta-release-readiness-plan.md → slice-breakdown-beta-release.md canonical breakdown
+title: "[<SLICE-ID>] <short description>"
+labels: ["slice", "beta-release-readiness"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Slice import from slice-breakdown-beta-release.md
+
+        The canonical task is the corresponding entry in
+        `alvearium-nova/.claude/audits/ecosystem/2026-06-30-deep-audit-v1/slice-breakdown-beta-release.md`.
+        This Issue is the working record; the slice doc is the source-of-truth.
+
+        Read CLAUDE.md before editing.
+  - type: input
+    id: slice-id
+    attributes:
+      label: Slice ID
+      description: From slice-breakdown-beta-release.md (e.g., BR.L1.001a)
+      placeholder: BR.L1.001a
+    validations:
+      required: true
+  - type: dropdown
+    id: lane
+    attributes:
+      label: Lane
+      options:
+        - "L0 — Sprint 0"
+        - "L1 — Exec Safety + License/Money"
+        - "L2 — StrategyNFT full build"
+        - "L3 — Trading integrations"
+        - "L4 — Options full"
+        - "L5 — Community plugin v3"
+        - "L6 — Sage product surfaces"
+        - "L7 — Social Trading platform"
+        - "L8 — Observability + Deploy"
+        - "L9 — Nova platform hardening"
+        - "L10 — Marketplace hardening"
+        - "L11 — Docs"
+        - "L12 — IP + Brand + Counsel"
+        - "L13 — Test coverage"
+        - "L14 — MEV-lab Phase 1"
+        - "L15 — Secondary repos"
+        - "L16 — Design"
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - "CO — Smart contract (Solidity/Foundry)"
+        - "BE — Backend service (Laravel/main-process)"
+        - "FE — Frontend (Vue/renderer/tile UI)"
+        - "RS — Rust engine"
+        - "PY — Python sidecar / reference"
+        - "IPC — IPC / preload bridge"
+        - "IN — Infrastructure (Pulumi/SSM/IAM)"
+        - "CI — CI/CD / hook chain / arch tests"
+        - "TE — Tests (unit/integration/E2E/bench/goldens)"
+        - "SEC — Security (authz/permissions/kill-switch/OFAC/allowlist)"
+        - "DOC — Documentation"
+        - "DES — Design (mocks/screenshots/UX)"
+        - "IP — IP hygiene (TS headers/patent/defensive pubs)"
+        - "BR — Brand canon (name/logo/copyright residue)"
+        - "OPS — Ops / owner action"
+        - "QA — QA / smoke test / runbook"
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - "P0 — beta-blocking"
+        - "P1 — release-quality"
+        - "P2 — polish (defer OK)"
+        - "P3 — nice-to-have"
+    validations:
+      required: true
+  - type: dropdown
+    id: estimate
+    attributes:
+      label: Estimate
+      options:
+        - "XS — <1h"
+        - "S — 1-4h"
+        - "M — 4-16h (1-3 days)"
+        - "L — 16-40h (1 week; MUST have a/b/c/d children)"
+        - "XL — >40h (multi-week; MUST have a/b/c/d/e children)"
+    validations:
+      required: true
+  - type: dropdown
+    id: sprint
+    attributes:
+      label: Target Sprint
+      options:
+        - "S0 — Immediate"
+        - "S1-2 — Foundation"
+        - "S3-5 — Big builds"
+        - "S6-8 — Product depth"
+        - "S9 — Buffer"
+        - "S10 — Pre-mainnet audit"
+        - "S11 — RC cut"
+        - "S12 — Ship"
+    validations:
+      required: true
+  - type: dropdown
+    id: owner-type
+    attributes:
+      label: Owner Type
+      options:
+        - "Agent"
+        - "Founder"
+        - "Counsel"
+        - "Designer"
+        - "Mixed"
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Bullet checklist of what "done" means
+      placeholder: |
+        - [ ] Implementation lands
+        - [ ] Unit tests
+        - [ ] Integration tests (if applicable)
+        - [ ] Real E2E env-gated test (if external system)
+        - [ ] JSDoc / TSDoc on exports
+        - [ ] Module-level doc comment
+        - [ ] CLAUDE.md 6-step slice completion checklist
+    validations:
+      required: true
+  - type: textarea
+    id: depends-on
+    attributes:
+      label: Depends on
+      description: Other slice IDs (BR.L<N>.NNN) that must complete first
+      placeholder: BR.L1.001b, BR.L1.001c
+  - type: textarea
+    id: related-findings
+    attributes:
+      label: Related findings
+      description: IDs from FINAL-master-findings-register-v2.md (e.g., F-STRIPE-05, R4H-01, NOVA-F-01)
+      placeholder: F-STRIPE-05, R4H-01
